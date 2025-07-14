@@ -429,9 +429,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="border-t border-border/30 mt-12 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 Learnyst. All rights reserved. Engineered with precision.</p>
-          </div>
+          
         </div>
       </footer>
     </div>
