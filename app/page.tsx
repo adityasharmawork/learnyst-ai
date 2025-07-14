@@ -51,7 +51,7 @@ export default function LandingPage() {
               <div className="brand-logo">
                 <span className="text-background font-bold text-lg">L</span>
               </div>
-              <span className="brand-text">Learnyst</span>
+              <span className="brand-text">Learnyst AI</span>
             </div>
 
             <div className="hidden md:flex items-center space-x-12">
@@ -128,10 +128,10 @@ export default function LandingPage() {
             <div
               className={`mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
-              <div className="text-center">
+              {/* <div className="text-center">
                 <div className="text-premium-2 font-bold mb-3">10,000+</div>
                 <div className="text-caption-premium">Active Students</div>
-              </div>
+              </div> */}
               <div className="text-center">
                 <div className="text-premium-2 font-bold mb-3">
                   <span className="neon-accent">95%</span>
@@ -379,7 +379,7 @@ export default function LandingPage() {
                 <div className="brand-logo">
                   <span className="text-background font-bold text-lg">L</span>
                 </div>
-                <span className="brand-text">Learnyst</span>
+                <span className="brand-text">Learnyst AI</span>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
                 Professional AI-powered learning platform engineered for students and educators worldwide.
