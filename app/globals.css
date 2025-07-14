@@ -1,0 +1,554 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
+    --popover: 255 255 255;
+    --popover-foreground: 0 0 0;
+    --primary: 0 0 0;
+    --primary-foreground: 255 255 255;
+    --secondary: 248 248 248;
+    --secondary-foreground: 0 0 0;
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+    --accent: 0 255 255;
+    --accent-foreground: 0 0 0;
+    --destructive: 0 0 0;
+    --destructive-foreground: 255 255 255;
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 0 255 255;
+    --radius: 0.5rem;
+    --neon: 0 255 255;
+    --neon-glow: 0 255 255;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 10 10 10;
+    --card-foreground: 255 255 255;
+    --popover: 10 10 10;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
+    --secondary: 24 24 24;
+    --secondary-foreground: 255 255 255;
+    --muted: 38 38 38;
+    --muted-foreground: 163 163 163;
+    --accent: 0 255 255;
+    --accent-foreground: 0 0 0;
+    --destructive: 255 255 255;
+    --destructive-foreground: 0 0 0;
+    --border: 38 38 38;
+    --input: 38 38 38;
+    --ring: 0 255 255;
+    --neon: 0 255 255;
+    --neon-glow: 0 255 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Premium Design System */
+@layer components {
+  .premium-card {
+    @apply bg-card border border-border/50 rounded-lg shadow-premium;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-premium-hover hover:border-border;
+    backdrop-filter: blur(20px);
+  }
+
+  .premium-button {
+    @apply bg-foreground text-background font-semibold px-8 py-4 rounded-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-foreground/90 hover:shadow-premium;
+    @apply focus:outline-none focus:ring-1 focus:ring-neon/50 focus:ring-offset-1 focus:ring-offset-background;
+    @apply active:scale-[0.98];
+  }
+
+  .premium-button-outline {
+    @apply border-2 border-foreground text-foreground bg-transparent font-semibold px-8 py-4 rounded-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-foreground hover:text-background hover:shadow-premium;
+    @apply focus:outline-none focus:ring-1 focus:ring-neon/50 focus:ring-offset-1 focus:ring-offset-background;
+    @apply active:scale-[0.98];
+  }
+
+  .premium-button-neon {
+    @apply bg-neon text-black font-bold px-8 py-4 rounded-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-neon/90 hover:scale-[1.02];
+    @apply focus:outline-none focus:ring-1 focus:ring-neon/50 focus:ring-offset-1 focus:ring-offset-background;
+    @apply active:scale-[0.98];
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+
+  .premium-button-neon:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  }
+
+  .premium-input {
+    @apply border border-border bg-background/50 px-4 py-3 rounded-lg;
+    @apply focus:outline-none focus:ring-1 focus:ring-neon/50 focus:border-neon/50;
+    @apply transition-all duration-300 ease-out;
+    @apply placeholder:text-muted-foreground;
+    backdrop-filter: blur(10px);
+  }
+
+  .text-premium-1 {
+    @apply text-5xl md:text-7xl font-bold tracking-tight;
+  }
+
+  .text-premium-2 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+
+  .text-premium-3 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .text-premium-4 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  .text-premium-5 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+
+  .text-body-premium {
+    @apply text-base leading-relaxed;
+  }
+
+  .text-caption-premium {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .section-premium {
+    @apply py-20 md:py-32;
+  }
+
+  .container-premium {
+    @apply px-6 md:px-8 lg:px-12 max-w-7xl mx-auto;
+  }
+
+  .grid-premium {
+    @apply grid gap-8 md:gap-12;
+  }
+
+  .nav-premium {
+    @apply border-b border-border/30 bg-background/80 backdrop-blur-xl;
+  }
+
+  .progress-premium {
+    @apply w-full bg-muted/30 rounded-full h-2;
+  }
+
+  .progress-fill-premium {
+    @apply bg-neon h-2 rounded-full transition-all duration-500 ease-out;
+  }
+
+  .neon-accent {
+    @apply text-neon;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1);
+  }
+
+  .glass-effect {
+    @apply bg-background/10 backdrop-blur-md border border-border/20;
+  }
+
+  .dark .glass-effect {
+    @apply bg-foreground/5 backdrop-blur-md border border-border/20;
+  }
+
+  .interactive-premium {
+    @apply cursor-pointer select-none;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .interactive-premium:hover {
+    @apply transform scale-[1.02];
+  }
+
+  .interactive-premium:active {
+    @apply transform scale-[0.98];
+  }
+
+  .fade-in-premium {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-premium.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .floating-premium {
+    animation: float-premium 6s ease-in-out infinite;
+  }
+
+  .brand-logo {
+    @apply w-10 h-10 bg-foreground rounded-lg flex items-center justify-center;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .brand-logo:hover {
+    @apply shadow-premium transform scale-105;
+  }
+
+  .brand-text {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  .status-completed-premium {
+    @apply bg-foreground text-background rounded-full;
+  }
+
+  .status-pending-premium {
+    @apply bg-muted text-muted-foreground rounded-full;
+  }
+
+  .status-active-premium {
+    @apply bg-neon/10 text-neon border-2 border-neon rounded-full;
+  }
+
+  /* Learning Hub Specific Styles */
+  .learning-card-premium {
+    @apply bg-card border border-border/30 rounded-lg shadow-premium;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-premium-hover hover:border-border/50;
+    backdrop-filter: blur(20px);
+  }
+
+  .topic-item-premium {
+    @apply premium-card p-4 cursor-pointer transition-all duration-300;
+    @apply hover:border-border/70 hover:shadow-premium;
+  }
+
+  .topic-item-premium.selected {
+    @apply border-neon/50 bg-neon/5;
+  }
+
+  .topic-item-premium.completed {
+    @apply bg-muted/20 border-muted-foreground/30;
+  }
+
+  .topic-item-premium.completed .topic-name {
+    @apply text-muted-foreground line-through;
+  }
+
+  .tab-premium {
+    @apply px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300;
+    @apply text-muted-foreground hover:text-foreground;
+    @apply border border-transparent;
+  }
+
+  .tab-premium.active {
+    @apply bg-foreground text-background border-foreground;
+  }
+
+  .dark .tab-premium.active {
+    @apply bg-foreground text-background;
+  }
+
+  .content-area-premium {
+    @apply bg-card/50 border border-border/30 rounded-lg p-8;
+    @apply backdrop-blur-sm;
+  }
+}
+
+/* Navigation */
+.nav-link-premium {
+  @apply text-foreground/70 hover:text-foreground transition-all duration-300;
+  @apply relative font-medium;
+}
+
+.nav-link-premium::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-neon transition-all duration-300;
+}
+
+.nav-link-premium:hover::after {
+  @apply w-full;
+}
+
+/* Form Elements */
+.form-group-premium {
+  @apply space-y-3;
+}
+
+.form-label-premium {
+  @apply text-sm font-semibold text-foreground;
+}
+
+.form-error-premium {
+  @apply text-sm text-foreground font-medium;
+}
+
+/* Content Styling */
+.content-premium {
+  @apply prose prose-neutral max-w-none;
+  @apply prose-headings:text-foreground prose-headings:font-bold;
+  @apply prose-p:text-foreground/90 prose-p:leading-relaxed;
+  @apply prose-strong:text-foreground prose-strong:font-bold;
+  @apply prose-code:bg-muted/50 prose-code:px-2 prose-code:py-1 prose-code:rounded;
+  @apply prose-pre:bg-muted/30 prose-pre:border prose-pre:border-border;
+  @apply prose-blockquote:border-l-4 prose-blockquote:border-neon prose-blockquote:pl-4;
+  @apply prose-ul:list-disc prose-ol:list-decimal;
+  @apply prose-li:text-foreground/90;
+}
+
+.dark .content-premium {
+  @apply prose-invert;
+}
+
+/* Loading States */
+.loading-premium {
+  @apply bg-muted/30 animate-pulse rounded-lg;
+}
+
+.shimmer-premium {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200px 100%;
+  animation: shimmer-premium 2s infinite;
+}
+
+.dark .shimmer-premium {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+/* Focus States */
+:focus-visible {
+  @apply outline-none ring-1 ring-neon/50 ring-offset-1 ring-offset-background;
+}
+
+/* Selection */
+::selection {
+  @apply bg-neon/20 text-foreground;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/30;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/50 rounded-full;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground;
+}
+
+/* Animations */
+@keyframes float-premium {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer-premium {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-neon {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .premium-card {
+    @apply mx-4;
+  }
+
+  .container-premium {
+    @apply px-4;
+  }
+
+  .premium-button,
+  .premium-button-outline,
+  .premium-button-neon {
+    @apply px-6 py-3 text-sm;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .premium-card {
+    @apply shadow-none border border-gray-300;
+  }
+
+  .premium-button {
+    @apply bg-black text-white;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .premium-card {
+    @apply border-2 border-foreground/50;
+  }
+
+  .neon-accent {
+    text-shadow: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .floating-premium {
+    animation: none;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* Topic Completion Styles */
+.topic-completed-premium {
+  @apply bg-foreground/5 border-foreground/20;
+}
+
+.topic-completed-premium .topic-name {
+  @apply text-foreground/60 line-through;
+}
+
+/* Cheatsheet Styling */
+.cheatsheet-premium {
+  @apply space-y-8;
+}
+
+.cheatsheet-section-premium {
+  @apply premium-card p-8 border-l-4 border-neon;
+}
+
+.cheatsheet-item-premium {
+  @apply premium-card p-6 hover:border-neon/30 interactive-premium;
+}
+
+/* Markdown Content Styling */
+.markdown-premium {
+  @apply max-w-none text-foreground leading-relaxed;
+}
+
+.markdown-premium h1 {
+  @apply text-premium-3 font-bold text-foreground mb-8 border-b border-border/30 pb-4;
+}
+
+.markdown-premium h2 {
+  @apply text-premium-4 font-bold text-foreground mb-6 mt-12;
+}
+
+.markdown-premium h3 {
+  @apply text-premium-5 font-semibold text-foreground mb-4 mt-8;
+}
+
+.markdown-premium h4 {
+  @apply text-xl font-semibold text-foreground mb-3 mt-6;
+}
+
+.markdown-premium p {
+  @apply mb-6 leading-relaxed text-foreground/90;
+}
+
+.markdown-premium ul {
+  @apply mb-6 ml-8 space-y-3 list-disc;
+}
+
+.markdown-premium ol {
+  @apply mb-6 ml-8 space-y-3 list-decimal;
+}
+
+.markdown-premium li {
+  @apply text-foreground/90;
+}
+
+.markdown-premium strong {
+  @apply font-bold text-foreground;
+}
+
+.markdown-premium em {
+  @apply italic text-muted-foreground;
+}
+
+.markdown-premium code {
+  @apply bg-muted/50 px-3 py-1 rounded text-sm font-mono border border-border/30;
+}
+
+.markdown-premium blockquote {
+  @apply border-l-4 border-neon/50 pl-6 italic text-muted-foreground bg-muted/20 py-4 rounded-r-lg;
+}
+
+.markdown-premium table {
+  @apply w-full border-collapse border border-border/30 mb-6 rounded-lg overflow-hidden;
+}
+
+.markdown-premium th {
+  @apply border border-border/30 bg-muted/30 p-4 text-left font-bold;
+}
+
+.markdown-premium td {
+  @apply border border-border/30 p-4;
+}
