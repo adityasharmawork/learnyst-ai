@@ -126,7 +126,7 @@ export default function LandingPage() {
 
             {/* Stats */}
             <div
-              className={`mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               {/* <div className="text-center">
                 <div className="text-premium-2 font-bold mb-3">10,000+</div>
