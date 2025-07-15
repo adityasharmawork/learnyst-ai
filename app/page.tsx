@@ -69,7 +69,7 @@ export default function LandingPage() {
             <div
               className={`flex items-center space-x-6 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
             >
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <Link href="/dashboard">
                 <Button className="premium-button-neon">
                   Get Started
