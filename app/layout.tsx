@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`dark ${inter.variable}`}>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
