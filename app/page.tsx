@@ -118,10 +118,10 @@ export default function LandingPage() {
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="premium-button-outline text-lg px-12 py-6 bg-transparent">
+              {/* <Button variant="outline" size="lg" className="premium-button-outline text-lg px-12 py-6 bg-transparent">
                 <Play className="mr-3 h-5 w-5" />
                 Watch Demo
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats */}
