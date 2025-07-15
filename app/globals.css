@@ -28,6 +28,30 @@
     --neon-glow: 0 255 255;
   }
 
+  html.dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 10 10 10;
+    --card-foreground: 255 255 255;
+    --popover: 10 10 10;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
+    --secondary: 24 24 24;
+    --secondary-foreground: 255 255 255;
+    --muted: 38 38 38;
+    --muted-foreground: 163 163 163;
+    --accent: 0 255 255;
+    --accent-foreground: 0 0 0;
+    --destructive: 255 255 255;
+    --destructive-foreground: 0 0 0;
+    --border: 38 38 38;
+    --input: 38 38 38;
+    --ring: 0 255 255;
+    --neon: 0 255 255;
+    --neon-glow: 0 255 255;
+  }
+
   .dark {
     --background: 0 0 0;
     --foreground: 255 255 255;
